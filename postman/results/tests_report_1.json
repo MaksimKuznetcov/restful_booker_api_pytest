@@ -1,0 +1,442 @@
+{
+	"id": "dea7797d-bc43-4ca5-b0e9-8a228ec2c62e",
+	"name": "Restful-Booker-QA",
+	"timestamp": "2026-06-03T11:42:59.214Z",
+	"collection_id": "42353124-75acabd4-e936-4446-bdfa-34a86d828c00",
+	"folder_id": 0,
+	"environment_id": "42353124-da412792-dec9-46a1-85dd-7de46319d1d7",
+	"totalPass": 18,
+	"delay": 0,
+	"persist": false,
+	"status": "finished",
+	"startedAt": "2026-06-03T11:42:55.675Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "77e3af33-73b6-4ac2-8f4e-8098cf3a2621",
+			"name": "HealthCheck",
+			"url": "https://restful-booker.herokuapp.com/Ping",
+			"time": 172,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Статус ответа должен быть 201 Created": true
+			},
+			"testPassFailCounts": {
+				"Статус ответа должен быть 201 Created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Статус ответа должен быть 201 Created": true
+				}
+			]
+		},
+		{
+			"id": "9c481436-a9ea-458b-9b62-4e5367c48eab",
+			"name": "CreateToken",
+			"url": "https://restful-booker.herokuapp.com/auth",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Статус ответа 200 OK": true,
+				"Ответ содержит валидный строковый токен": true
+			},
+			"testPassFailCounts": {
+				"Статус ответа 200 OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ответ содержит валидный строковый токен": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Статус ответа 200 OK": true,
+					"Ответ содержит валидный строковый токен": true
+				}
+			]
+		},
+		{
+			"id": "91971359-d95f-4f51-9a59-fb1da30a6900",
+			"name": "CreateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Бронирование успешно создано - Статус 200": true
+			},
+			"testPassFailCounts": {
+				"Бронирование успешно создано - Статус 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Бронирование успешно создано - Статус 200": true
+				}
+			]
+		},
+		{
+			"id": "a9ca7578-785f-4ec5-b62f-f03a03cb6a52",
+			"name": "GetBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/1334",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Статус ответа 200 OK": true,
+				"Данные брони соответствуют ожидаемым": true
+			},
+			"testPassFailCounts": {
+				"Статус ответа 200 OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Данные брони соответствуют ожидаемым": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Статус ответа 200 OK": true,
+					"Данные брони соответствуют ожидаемым": true
+				}
+			]
+		},
+		{
+			"id": "064ae17e-1a07-4f75-9aee-eea491061141",
+			"name": "GetBookingIds",
+			"url": "https://restful-booker.herokuapp.com/booking/",
+			"time": 359,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Статус ответа 200 OK": true
+			},
+			"testPassFailCounts": {
+				"Статус ответа 200 OK": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				359
+			],
+			"allTests": [
+				{
+					"Статус ответа 200 OK": true
+				}
+			]
+		},
+		{
+			"id": "d7b34588-a9f9-44cd-b7fa-ba9a33fbea1a",
+			"name": "GetBookingIds(query parameters)",
+			"url": "https://restful-booker.herokuapp.com/booking/?firstname=Maksim&lastname=Kuznetcov",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Статус ответа 200 OK": true,
+				"Ответ является массивом объектов": true,
+				"Каждый элемент поиска содержит bookingid": true
+			},
+			"testPassFailCounts": {
+				"Статус ответа 200 OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ответ является массивом объектов": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Каждый элемент поиска содержит bookingid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Статус ответа 200 OK": true,
+					"Ответ является массивом объектов": true,
+					"Каждый элемент поиска содержит bookingid": true
+				}
+			]
+		},
+		{
+			"id": "59a966f7-de85-43f6-abda-d77bf67d9b89",
+			"name": "UpdateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/1334",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Данные успешно обновлены - Статус 200": true
+			},
+			"testPassFailCounts": {
+				"Данные успешно обновлены - Статус 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Данные успешно обновлены - Статус 200": true
+				}
+			]
+		},
+		{
+			"id": "fd258f94-5f9b-4dba-8127-16a34f4d5cf7",
+			"name": "PartialUpdateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/1334",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Статус-код 200 OK при обновлении": true,
+				"Поля firstname и additionalneeds успешно обновились": true,
+				"Остальные поля сохранили корректные типы данных": true
+			},
+			"testPassFailCounts": {
+				"Статус-код 200 OK при обновлении": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Поля firstname и additionalneeds успешно обновились": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Остальные поля сохранили корректные типы данных": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Статус-код 200 OK при обновлении": true,
+					"Поля firstname и additionalneeds успешно обновились": true,
+					"Остальные поля сохранили корректные типы данных": true
+				}
+			]
+		},
+		{
+			"id": "67392b5f-9da6-48ca-9f90-9929209acc90",
+			"name": "DeleteBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/1334",
+			"time": 172,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Бронь успешно удалена - Статус 201": true
+			},
+			"testPassFailCounts": {
+				"Бронь успешно удалена - Статус 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Бронь успешно удалена - Статус 201": true
+				}
+			]
+		},
+		{
+			"id": "e31aa2b2-3280-441e-9899-05352dd03775",
+			"name": "UpdateBooking(without auth)",
+			"url": "https://restful-booker.herokuapp.com/booking/1334",
+			"time": 172,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Доступ отклонен: Статус-код 403 или 401": true,
+				"Тело ответа содержит текст 'Forbidden'": true
+			},
+			"testPassFailCounts": {
+				"Доступ отклонен: Статус-код 403 или 401": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Тело ответа содержит текст 'Forbidden'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Доступ отклонен: Статус-код 403 или 401": true,
+					"Тело ответа содержит текст 'Forbidden'": true
+				}
+			]
+		},
+		{
+			"id": "f9f734ac-bd01-44c4-8d31-0c9c1aa8b89d",
+			"name": "DeleteBooking(without auth)",
+			"url": "https://restful-booker.herokuapp.com/booking/1334",
+			"time": 172,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Доступ запрещен без авторизации - Статус 403": true
+			},
+			"testPassFailCounts": {
+				"Доступ запрещен без авторизации - Статус 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Доступ запрещен без авторизации - Статус 403": true
+				}
+			]
+		},
+		{
+			"id": "054a83e1-6d7d-4f1a-9587-bf28cd186474",
+			"name": "CreateBooking(Incorrect dates)",
+			"url": "https://restful-booker.herokuapp.com/booking",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Бэкенд отклонил некорректные даты (Код 400)": false,
+				"КРИТИЧЕСКИЙ БАГ: Бэкенд создал бронь с некорректными датами": false
+			},
+			"testPassFailCounts": {
+				"Бэкенд отклонил некорректные даты (Код 400)": {
+					"pass": 0,
+					"fail": 1
+				},
+				"КРИТИЧЕСКИЙ БАГ: Бэкенд создал бронь с некорректными датами": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Бэкенд отклонил некорректные даты (Код 400)": false,
+					"КРИТИЧЕСКИЙ БАГ: Бэкенд создал бронь с некорректными датами": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2251,
+	"collection": {
+		"requests": [
+			{
+				"id": "77e3af33-73b6-4ac2-8f4e-8098cf3a2621",
+				"method": "GET"
+			},
+			{
+				"id": "9c481436-a9ea-458b-9b62-4e5367c48eab",
+				"method": "POST"
+			},
+			{
+				"id": "91971359-d95f-4f51-9a59-fb1da30a6900",
+				"method": "POST"
+			},
+			{
+				"id": "a9ca7578-785f-4ec5-b62f-f03a03cb6a52",
+				"method": "GET"
+			},
+			{
+				"id": "064ae17e-1a07-4f75-9aee-eea491061141",
+				"method": "GET"
+			},
+			{
+				"id": "d7b34588-a9f9-44cd-b7fa-ba9a33fbea1a",
+				"method": "GET"
+			},
+			{
+				"id": "59a966f7-de85-43f6-abda-d77bf67d9b89",
+				"method": "PUT"
+			},
+			{
+				"id": "fd258f94-5f9b-4dba-8127-16a34f4d5cf7",
+				"method": "PATCH"
+			},
+			{
+				"id": "67392b5f-9da6-48ca-9f90-9929209acc90",
+				"method": "DELETE"
+			},
+			{
+				"id": "e31aa2b2-3280-441e-9899-05352dd03775",
+				"method": "PUT"
+			},
+			{
+				"id": "f9f734ac-bd01-44c4-8d31-0c9c1aa8b89d",
+				"method": "DELETE"
+			},
+			{
+				"id": "054a83e1-6d7d-4f1a-9587-bf28cd186474",
+				"method": "POST"
+			}
+		]
+	}
+}
