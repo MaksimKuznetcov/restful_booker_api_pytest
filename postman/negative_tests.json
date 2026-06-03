@@ -1,0 +1,86 @@
+[
+  {
+    "testCaseName": "Имя в виде числа",
+    "invalidPayload": {
+      "firstname": 12345,
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-02"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  {
+    "testCaseName": "Имя со значением null",
+    "invalidPayload": {
+      "firstname": null,
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-02"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  {
+    "testCaseName": "Отрицательная цена",
+    "invalidPayload": {
+      "firstname": "Jim",
+      "lastname": "Brown",
+      "totalprice": -500,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-02"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  {
+    "testCaseName": "Цена в виде строки",
+    "invalidPayload": {
+      "firstname": "Jim",
+      "lastname": "Brown",
+      "totalprice": "two hundred",
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-02"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  {
+    "testCaseName": "Депозит в виде некорректной строки",
+    "invalidPayload": {
+      "firstname": "Jim",
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": "yes",
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-02"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  {
+    "testCaseName": "Некорректный формат даты",
+    "invalidPayload": {
+      "firstname": "Jim",
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "not-a-date",
+        "checkout": "2026-01-02"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  }
+]
