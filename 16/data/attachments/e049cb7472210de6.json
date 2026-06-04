@@ -1,0 +1,14 @@
+{
+    "bookingid": 1572,
+    "booking": {
+        "firstname": "Maksim",
+        "lastname": "Kuznetcov",
+        "totalprice": 200,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-07-01",
+            "checkout": "2026-07-15"
+        },
+        "additionalneeds": "Breakfast"
+    }
+}
