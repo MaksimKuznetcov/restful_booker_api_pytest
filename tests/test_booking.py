@@ -30,9 +30,12 @@ class TestBookingLifecycle:
 
     # Позитивные тесты booking:
 
-
-    def test_create_booking():
+    @allure.feature("Управление бронированиями (CRUD)")
+    @allure.story("Успешное создание бронирования")
+    @pytest.mark.run(order=2)
+    def test_create_booking(self):
         """Проверка создание брони"""
+        global BOOKING_ID
         url = f"{BASE_URL}/booking"
         payload = {
             "firstname": "Maksim",
@@ -42,11 +45,18 @@ class TestBookingLifecycle:
             "bookingdates": {"checkin": "2026-07-01", "checkout": "2026-07-15"},
             "additionalneeds": "Breakfast"
         }
-        global BOOKING_ID
 
-        response = requests.post(url, json=payload)
-        assert response.status_code == 200
+        with allure.step("Отправка POST-запроса на создание брони"):
+            response = requests.post(url, json=payload)
+        
+        with allure.step("Логирование JSON запроса и ответа"):
+            allure.attach(json.dumps(payload, indent=4), name="Отправленный JSON-Body", attachment_type=allure.attachment_type.JSON)
+            allure.attach(json.dumps(response.json(), indent=4), name="Ответ бэкенда (JSON)", attachment_type=allure.attachment_type.JSON)
 
+        with allure.step("Проверка успешности запроса"):    
+            assert response.status_code == 200
+
+        # Сохранение ID
         BOOKING_ID = response.json()["bookingid"]
         assert BOOKING_ID is not None
 
