@@ -14,7 +14,7 @@ class TestBookingLifecycle:
     @allure.feature("Доступность сервиса (Health Check)")
     @allure.story("Проверка работоспособности API")
     @pytest.mark.run(order=1)
-    def test_health_check():
+    def test_health_check(self):
         """Проверка доступности API (Ping)"""
         url = f"{BASE_URL}/Ping"
         
