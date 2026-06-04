@@ -1,0 +1,11 @@
+{
+    "firstname": "Andrey",
+    "lastname": "Kuznetcov",
+    "totalprice": 350,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-07-01",
+        "checkout": "2026-07-15"
+    },
+    "additionalneeds": "Extra pillows"
+}

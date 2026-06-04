@@ -1,4 +1,0 @@
-"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
-"12","Тестирование REST API сервиса Restful-Booker","3","","0","0","","0"
-"0","Тестирование REST API сервиса Restful-Booker","0","Доступность сервиса (Health Check)","1","0","Проверка работоспособности API","0"
-"0","Тестирование REST API сервиса Restful-Booker","0","Управление бронированиями (CRUD)","1","0","Успешное создание бронирования","0"
