@@ -13,23 +13,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Шаг 1: Скачиваем код нашего репозитория на виртуальную машину
+    # Скачиваем код нашего репозитория на виртуальную машину
     - name: Checkout project code
       uses: actions/checkout@v4
 
-    # Шаг 2: Устанавливаем и настраиваем Python
+    # Устанавливаем и настраиваем Python
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.13'
 
-    # Шаг 3: Устанавливаем библиотеки из файла requirements.txt
+    # Устанавливаем библиотеки из файла requirements.txt
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r requirements/requirements.txt
 
-    # Шаг 4: Запускаем тесты командой pytest
-    - name: Run Pytest Automation
+    # Запускаем тесты на Pytest и собираем сырые результаты Allure в папку allure-results
+    - name: Run Pytest with Allure
       run: |
-        pytest -v
+        pytest -v --alluredir=allure-results
+      continue-on-error: true # Позволяет продолжить пайплайн, даже если тесты упали (а наши DDT-тесты упадут из-за багов!)
+    
+    # Генерируем красивый HTML-отчет из сырых результатов и публикуем его на GitHub Pages
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      id: allure-report
+      with:
+        allure_results: allure-results
+        allure_history: allure-history
+        keep_reports: 20
+
+    # Деплоим готовый отчет на ветку gh-pages для публичного просмотра
+    - name: Deploy Allure Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-history
